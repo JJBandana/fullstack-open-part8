@@ -1,5 +1,4 @@
 import { useQuery } from "@apollo/client"
-import { useState, useEffect } from "react"
 import { ALL_BOOKS } from "../queries"
 
 const Recomendations = ({ user }) => {
@@ -23,9 +22,9 @@ const Recomendations = ({ user }) => {
           </tr>
         </thead>
         <tbody>
-          { data.allBooks.map(book => {
+          { data.allBooks.map((book, i) => {
             return(          
-              <tr key={book.id}>
+              <tr key={i}>
                 <td>{book.title}</td>
                 <td>{book.author.name}</td>
                 <td>{book.published}</td>
